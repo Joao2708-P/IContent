@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  relationMode      = "prisma"
+}
+
+model User {
+  id String @id @default(uuid())
+
+  name          String
+  user_name     String @unique
+  email         String @unique
+  password      String
+  image_user    String @db.LongText
+  schoolLevelId String
+
+  level SchoolLevel @relation(fields: [schoolLevelId], references: [id])
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("users")
+}
+
+enum ContentStatus {
+  WELL_RATED
+  POORLY_RATED
+}
+
+model Content {
+  id String @id @default(uuid())
+
+  title           String
+  body            String        @db.MediumText
+  slug            String        @unique
+  image_content   String?       @db.LongText
+  assessment      ContentStatus @default(WELL_RATED)
+  schoolSubjectId String
+  schoolLevelId   String
+
+  discipline SchoolSubject @relation(fields: [schoolSubjectId], references: [id])
+  level      SchoolLevel   @relation(fields: [schoolLevelId], references: [id])
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("contents")
+}
+
+model SchoolLevel {
+  id String @id @default(uuid())
+
+  level String @unique
+  slug  String @unique
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  Content Content[]
+  User    User[]
+
+  @@map("school_levels")
+}
+
+model SchoolSubject {
+  id String @id @default(uuid())
+
+  discipline String @unique
+  slug       String @unique
+
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+  Content    Content[]
+
+  @@map("school_subjects")
+}

@@ -1,0 +1,30 @@
+@import '../colors';
+
+/*Nav*/
+/*------------------------------------------------------------*/
+.section 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+
+    .tittleMaterial
+    {
+        position: static;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 90vh;
+
+        .h2 
+        {
+            position: absolute;
+            margin-top: 20%;
+            color: $color-white;
+            font-size: 100px;
+            margin-left: 40%;
+        }
+    }
+}

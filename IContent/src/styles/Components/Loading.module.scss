@@ -1,0 +1,43 @@
+@import '../colors';
+
+.main 
+{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .loadingContainer 
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      
+    .loadingSpiner
+    {
+      width: 10rem;
+      height: 10rem;
+      border: 0.375rem solid #ccc;
+      border-top: 0.375rem solid #3498db;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+
+    p
+    {
+        margin-top: 1rem;
+        margin-left: 0.5rem;
+        color: $color-white;
+        align-items: center;
+        justify-content: center;
+        font-size: large;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+  }
+}

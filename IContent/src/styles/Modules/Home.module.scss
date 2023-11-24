@@ -1,0 +1,144 @@
+/*Nav Bar*/
+@import '../_colors.scss';
+/*====================================*/
+
+/*search*/
+.section 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 105vh;
+
+    .search
+    {
+        position: absolute;
+        width: 900px;
+        height: 60px;
+        border-radius: 50px;
+        background-color: #FFF;
+        overflow: hidden;
+
+        .icon 
+        {
+            position: re;
+            margin-left: 10px;
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            border-radius: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .icon::before
+        {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 3px solid #008037;
+            border-radius: 50%;
+            transform: translate(-4px, -4px);
+        }
+
+        .icon::after
+        {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 12px;
+            background-color: #008037;
+            transform: translate(6px, 6px) rotate(315deg);
+        }
+
+        .meio 
+        {
+           margin-top: -40px;
+        }
+
+        .input 
+        {
+            position: relative;
+            width: 87%;
+            height: 100%;
+            margin-left: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input 
+        {
+            position: absolute;
+            margin-top: 0px;
+            width: 50%;
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 18px;
+        }
+
+        .clear 
+        {
+            position: absolute;
+            transform: translateY(-50%);
+            margin-left: 95%;
+            margin-top: -10px;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .clear::before 
+        {
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: 20px;
+            background: #999;
+            transform: rotate(45deg);
+        }
+
+        .clear::after 
+        {
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: 20px;
+            background: #999;
+            transform: rotate(315deg);
+        }
+    }
+}
+/*Section Text*/
+.text 
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -22%;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+
+    p
+    {
+        font-size: 23px;
+        color: #FFF;
+    }
+}
+/*=======================*/
+
+.img 
+{
+    margin-top: -20%;
+    margin-left: 30px;
+}

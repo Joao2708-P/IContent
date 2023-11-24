@@ -1,0 +1,107 @@
+.footer {
+  position: absolute;
+  margin-top: 12%;
+  width: 100%;
+  min-height: 25vh;
+  background-color: #228b22;
+}
+
+.corpo {
+  display: flex;
+  justify-content: space-around;
+
+  h3 {
+    color: #fff;
+    margin-top: 6%;
+  }
+
+  .information
+  {
+    margin-top: 2%;
+
+    span {
+      font-size: large;
+      color: #fff;
+    }
+
+    a {
+      display: flex;
+      text-decoration: none;
+      margin-top: 6%;
+      color: #d5bdbd;
+    }
+  }
+  .company,
+  .follows 
+  {
+    margin-top: 2%;
+
+    span {
+      font-size: large;
+      color: #fff;
+    }
+
+    a 
+    {
+      display: flex;
+      text-decoration: none;
+      margin-top: 10%;
+      color: #d5bdbd;
+    }
+  }
+}
+
+
+@media screen and (min-width: 200px) and (max-width: 991px) 
+{
+  .footer 
+  {
+    position: absolute;
+    margin-top: 50%;
+    width: 100%;
+    min-height: 25vh;
+    background-color: #228b22;
+  }
+
+  .footer .corpo
+  {
+    margin-top: 0%;
+    display: inline-block;
+    text-align: center;
+    margin-left: 7rem;
+  }
+
+  .footer .corpo .company a
+  {
+    text-align: center;
+    margin-left: 4rem;
+  }
+
+  .footer .corpo h3
+  {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .footer .corpo .information
+  {
+    margin-top: 3rem;
+  }
+
+  .footer .corpo .follows
+  {
+    margin-top: 3rem;
+  }
+
+  .footer .corpo .information a
+  {
+    text-align: center;
+    margin-left: 4rem;
+  }
+
+  .footer .corpo .follows a
+  {
+    text-align: center;
+    margin-left: 4rem;
+  }
+}
